@@ -7,7 +7,7 @@ const GlobalFilter = ({ filter, setFilter }) => {
   //filter after user stop typing
   const onChange = useAsyncDebounce((value) => {
     setFilter(value || undefined);
-  }, 1000);
+  }, 300);
 
   return (
     <span>

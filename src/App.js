@@ -6,6 +6,9 @@ import TableContent from "./Table/TableContent";
 import BasicTable from "./Components/Table/BasicTable";
 import SortedTable from "./Components/Table/SortedTable";
 import FilteringTable from "./Components/Table/FilteringTable/FilteringTable";
+import PaginationTable from "./Components/Table/PaginationTable/PaginationTable";
+import RowSelection from "./Components/Table/RowSelection/RowSelection";
+import ColumnOrder from "./Components/Table/ColumnOrder/ColumnOrder";
 
 function App() {
   return (
@@ -14,7 +17,10 @@ function App() {
       {/* <TableContent /> */}
       {/* <BasicTable /> */}
       {/* <SortedTable /> */}
-      <FilteringTable />
+      {/* <FilteringTable /> */}
+      {/* <PaginationTable /> */}
+      {/* <RowSelection /> */}
+      <ColumnOrder />
     </>
   );
 }
