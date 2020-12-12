@@ -46,10 +46,12 @@ const GROUP_COLUMNS = [
     accessor: "id",
     // Filter: ColumnFilter,//we dont need filters on Id
     disableFilters: true,
+    sticky: "left",
   },
   {
     Header: "Name",
     Footer: "Name",
+
     columns: [
       {
         Header: "First Name",

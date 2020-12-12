@@ -10,6 +10,7 @@ import PaginationTable from "./Components/Table/PaginationTable/PaginationTable"
 import RowSelection from "./Components/Table/RowSelection/RowSelection";
 import ColumnOrder from "./Components/Table/ColumnOrder/ColumnOrder";
 import ColumnHiding from "./Components/Table/ColumnHiding/ColumnHiding";
+import StickyTable from "./Components/Table/StickyTable/StickyTable";
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
       {/* <PaginationTable /> */}
       {/* <RowSelection /> */}
       {/* <ColumnOrder /> */}
-      <ColumnHiding />
+      {/* <ColumnHiding /> */}
+      <StickyTable />
     </>
   );
 }
