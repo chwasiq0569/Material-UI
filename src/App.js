@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Main from "./Components/Main";
+import TableHeader from "./Table/TableHeader";
+import TableContent from "./Table/TableContent";
+import BasicTable from "./Components/Table/BasicTable";
+import SortedTable from "./Components/Table/SortedTable";
+import FilteringTable from "./Components/Table/FilteringTable/FilteringTable";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <TableHeader /> */}
+      {/* <TableContent /> */}
+      {/* <BasicTable /> */}
+      {/* <SortedTable /> */}
+      <FilteringTable />
+    </>
   );
 }
 
