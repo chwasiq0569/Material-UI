@@ -1,20 +1,18 @@
 import React, { useMemo } from "react";
-import { useTable, useColumnOrder } from "react-table";
+import { useTable } from "react-table";
 import MOCK_DATA from "../MOCK_DATA.json";
 import GROUP_COLUMNS from "../columns";
 import "../basictable.css";
+import CheckBox from "../RowSelection/CheckBox";
 
-const ColumnOrder = () => {
+const ColumnHiding = () => {
   const columns = useMemo(() => GROUP_COLUMNS, []);
   const data = useMemo(() => MOCK_DATA, []);
 
-  const tableInstance = useTable(
-    {
-      columns: columns,
-      data: data,
-    },
-    useColumnOrder
-  );
+  const tableInstance = useTable({
+    columns: columns,
+    data: data,
+  });
   const {
     getTableProps,
     getTableBodyProps,
@@ -22,24 +20,24 @@ const ColumnOrder = () => {
     footerGroups,
     rows,
     prepareRow,
-    setColumnOrder,
+    allColumns,
+    getToggleHideAllColumnsProps,
   } = tableInstance;
-
-  const changeOrder = () => {
-    setColumnOrder([
-      "id",
-      "first_name",
-      "last_name",
-      "phone",
-      "email",
-      "country",
-      "date_of_birth",
-    ]);
-  };
-
   return (
     <>
-      <button onClick={changeOrder}>Change Column Order</button>
+      <div>
+        <div>
+          <CheckBox {...getToggleHideAllColumnsProps()} /> Toggle All
+        </div>
+        {allColumns.map((column) => (
+          <div key={column.id}>
+            <label>
+              <input type="checkbox" {...column.getToggleHiddenProps()} />{" "}
+              {column.Header}
+            </label>
+          </div>
+        ))}
+      </div>
       <table {...getTableProps()}>
         <thead className="thead">
           {headerGroups.map((headerGroup) => (
@@ -77,4 +75,4 @@ const ColumnOrder = () => {
   );
 };
 
-export default ColumnOrder;
+export default ColumnHiding;

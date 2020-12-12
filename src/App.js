@@ -9,6 +9,7 @@ import FilteringTable from "./Components/Table/FilteringTable/FilteringTable";
 import PaginationTable from "./Components/Table/PaginationTable/PaginationTable";
 import RowSelection from "./Components/Table/RowSelection/RowSelection";
 import ColumnOrder from "./Components/Table/ColumnOrder/ColumnOrder";
+import ColumnHiding from "./Components/Table/ColumnHiding/ColumnHiding";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       {/* <FilteringTable /> */}
       {/* <PaginationTable /> */}
       {/* <RowSelection /> */}
-      <ColumnOrder />
+      {/* <ColumnOrder /> */}
+      <ColumnHiding />
     </>
   );
 }
