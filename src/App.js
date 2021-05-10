@@ -14,6 +14,10 @@ import StickyTable from "./Components/Table/StickyTable/StickyTable";
 import {
   AppBar,
   Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
   Container,
   CssBaseline,
   Grid,
@@ -21,8 +25,39 @@ import {
   Typography,
 } from "@material-ui/core";
 import { PhotoCamera } from "@material-ui/icons";
+import { makeStyles } from "@material-ui/core/styles"
+
+const useStyles = makeStyles((theme) => ({
+   container: {
+     backgroundColor: theme.palette.background.paper,
+     padding: theme.spacing(8, 0, 6)
+   },
+   icons: {
+     marginRight: "20px"
+   },
+   buttons: {
+     marginTop: "30px"
+   },
+   cardGrid: {
+    padding: "20px 0"
+   },
+   card:{
+    height: "100%",
+    display: "flex",
+    flexDirection: "column"
+   },
+   cardMedia: {
+    paddingTop: "56.25%" //16.9  
+   },
+   cardContent: {
+     flexGrow: 1
+   }
+}))
 
 function App() {
+  
+  const classes = useStyles();
+
   return (
     <>
       {/* <TableHeader /> */}
@@ -38,12 +73,12 @@ function App() {
       <CssBaseline />
       <AppBar>
         <Toolbar>
-          <PhotoCamera />
+          <PhotoCamera className={classes.icons} />
           <Typography variant="h6">Photo Album</Typography>
         </Toolbar>
       </AppBar>
       <main>
-        <div>
+        <div className={classes.container}>
           <Container maxWidth="sm" align="center" style={{ marginTop: "100px" }} >
             <Typography variant="h3" color="textPrimary" gutterBottom>The Main Heading</Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
@@ -51,7 +86,7 @@ function App() {
               choices, you can eject at any time. This command will remove the
               single build dependency from your project.
             </Typography>
-            <div>
+            <div className={classes.buttons}>
                 <Grid container spacing={2} justify='center'>
                   <Grid item>
                     <Button variant='contained' color='primary'>
@@ -65,6 +100,32 @@ function App() {
                   </Grid>
                 </Grid>
             </div>
+          </Container>
+          <Container className={classes.cardGrid}>
+              <Grid container spacing={1} >{
+                [1,2,3,4,5,6,7,8,9].map((e) => (
+                  <Grid item xs={12} sm={6} md={4}>
+                      <Card className={classes.card}>
+                          <CardMedia className={classes.cardMedia} image="https://source.unsplash.com/random" title="Card Image" />
+                          <CardContent className={classes.cardContent}>
+                            <Typography gutterBottom variant="h5">
+                              Heading
+                            </Typography>
+                            <Typography>
+                              This is media Card you can use this section to describe the content.
+                            </Typography>
+                          </CardContent>
+                          <CardActions>
+                            <Button size="small" color="primary">View</Button>
+                            <Button size="small" color="primary">Edit</Button>
+                          </CardActions>
+                      </Card>
+                  </Grid>
+                ))
+
+              }
+                 
+              </Grid>
           </Container>
         </div>
       </main>
