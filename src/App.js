@@ -11,6 +11,8 @@ import RowSelection from "./Components/Table/RowSelection/RowSelection";
 import ColumnOrder from "./Components/Table/ColumnOrder/ColumnOrder";
 import ColumnHiding from "./Components/Table/ColumnHiding/ColumnHiding";
 import StickyTable from "./Components/Table/StickyTable/StickyTable";
+import { AppBar, CssBaseline, Toolbar, Typography } from '@material-ui/core';
+import { PhotoCamera } from "@material-ui/icons";
 
 function App() {
   return (
@@ -24,7 +26,14 @@ function App() {
       {/* <RowSelection /> */}
       {/* <ColumnOrder /> */}
       {/* <ColumnHiding /> */}
-      <StickyTable />
+      {/* <StickyTable /> */}
+      <CssBaseline />
+      <AppBar>
+        <Toolbar>
+          <PhotoCamera />
+          <Typography variant='h6'>Photo Album</Typography>
+        </Toolbar>
+      </AppBar>
     </>
   );
 }
